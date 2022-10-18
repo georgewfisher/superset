@@ -16,6 +16,9 @@
 #
 
 ######################################################################
+RUN mkdir /flask
+COPY flask/Flask_AppBuilder-4.1.4-py3-none-any.whl /flask/Flask_AppBuilder-4.1.4-py3-none-any.whl
+
 # Node stage to deal with static asset construction
 ######################################################################
 ARG PY_VER=3.8.13-slim
@@ -64,6 +67,9 @@ RUN mkdir -p ${PYTHONPATH} \
             libpq-dev \
             libecpg-dev \
         && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /flask
+COPY flask/Flask_AppBuilder-4.1.4-py3-none-any.whl /flask/Flask_AppBuilder-4.1.4-py3-none-any.whl
 
 COPY ./requirements/*.txt  /app/requirements/
 COPY setup.py MANIFEST.in README.md /app/

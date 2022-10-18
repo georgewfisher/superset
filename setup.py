@@ -19,6 +19,7 @@ import json
 import os
 import subprocess
 import sys
+from pathlib import Path
 
 from setuptools import find_packages, setup
 
@@ -83,7 +84,7 @@ setup(
         "cryptography>=3.3.2",
         "deprecation>=2.1.0, <2.2.0",
         "flask>=2.0.0, <3.0.0",
-        "flask-appbuilder>=4.1.4, <5.0.0",
+        "flask-appbuilder @ file://localhost/flask/Flask_AppBuilder-4.1.4-py3-none-any.whl",
         "flask-caching>=1.10.0",
         "flask-compress",
         "flask-talisman",
